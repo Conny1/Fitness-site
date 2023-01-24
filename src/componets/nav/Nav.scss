@@ -1,0 +1,36 @@
+.nav{
+    background-color:#232d36 ;
+    display: flex;
+    justify-content: space-between;
+.logo{
+    width: 30%;
+    margin-left: 10px;
+    a{
+        text-decoration: none;
+        color: #fff;
+        
+    }
+}
+.links{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+    a{
+        color: #fff;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 5;
+        transition-duration: 1s;
+        
+    }
+    a.active{
+        background-color: #1face1;
+    }
+    a:hover{
+        font-size: 25px;
+    }
+}
+
+}
