@@ -1,0 +1,122 @@
+.bodymass{
+    width: 95%;
+    background-color:#1face1 ;
+    display: flex;
+    justify-content: space-around;
+    height: 25vh;
+    margin-top: -100px;    
+    align-items: center;
+    position: absolute;
+    color: #fff;
+       
+    
+}
+.leftContainer{
+    width: 30%;
+    text-align: start;
+    
+    
+}
+.leftContainer p{
+    font-size: 13px;  
+    line-height: 1px;
+}
+.leftContainer h3{
+    font-size: 26px; 
+    line-height: 30px; 
+    
+}
+.rightContainer{
+    width: 50%;
+    
+   
+}
+.inputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inputs input{
+    height: 27px;
+    border: none;
+
+}
+.inputs button{
+background-color: #000;
+color: #fff;
+padding: 5px;
+cursor: pointer;
+border: none;
+
+}
+.bmi{
+    background-color: #e01a19;
+    
+}
+@media screen and ( max-width:874px ) {
+    
+    .inputs button{
+       margin-top: 10px;
+        
+        }   
+}
+@media screen and ( max-width:727px ) {
+    
+    .inputs{
+      position: relative;
+      gap: 10px;
+        
+        }
+    .inputs button{
+         position: absolute;
+         right: 0;
+         
+             
+        } 
+    .inputs input{
+        width: 50%;
+    }
+    .leftContainer h3{
+        font-size: 15px; 
+        line-height: 20px; 
+        
+    }
+    .rightContainer{
+        margin-right: -20px;       
+    }
+       
+    
+}
+@media screen and ( max-width:607px ) {
+    
+    .bodymass{
+        height: 30vh;  
+        width: 100%;  
+        margin-top: -5px;   
+    }
+    .inputs{
+        flex-direction: column;
+    }
+    .inputs button {
+        position: relative;
+
+    } 
+    .inputs input {
+        width: 90%;
+    }
+}
+@media screen and ( max-width:347px ) {
+    .bodymass{
+        flex-direction: column;
+        height: auto;
+    }
+    .leftContainer, .rightContainer{
+        width: 100%;
+        margin: 0;
+    }
+   
+    
+}
+
+    

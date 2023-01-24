@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css'
+import {BodyMass, Featured, Footer} from '../../componets'
 
 const Home = () => {
   return (
@@ -13,6 +14,9 @@ const Home = () => {
 
      </div>
      </div>
+     <BodyMass/>
+     <Featured/>
+     <Footer/>
 
       
     </div>
