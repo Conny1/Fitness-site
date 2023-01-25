@@ -1,0 +1,36 @@
+.exercisesList{
+    display: flex;
+    flex-wrap: wrap;
+    gap :20px;
+    justify-content: center;
+    
+}
+.sort{
+    margin-top: 20px;
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btns button{
+    background-color:#1face1 ;
+    padding: 10px;
+    border: none;
+    margin-top: 5px;
+    color: #fff;
+
+}
+.search{
+    margin: 20px;
+}
+.search input {
+    width: 40%;
+    height: 30px;
+}
+.search button{
+    height: 35px;
+    background-color:#232d36 ;
+    color: #fff;
+}

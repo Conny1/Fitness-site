@@ -1,0 +1,30 @@
+.list{
+    width: 20%;
+    outline: 1px solid gray;
+    background-color:#232d36 ;
+    
+}
+.list a{
+    text-decoration: none;
+
+    color: #fff;
+
+}
+.Exerciseinfo{
+    text-align: start;
+}
+@media screen and ( max-width:1000px ) {
+    .list{
+        width: 30%;
+    }
+    
+}
+@media screen and ( max-width:600px ) {
+    .list{
+        width: 90%;
+    }
+    .Exerciseinfo{
+        font-size: 20px;
+    }
+    
+}
