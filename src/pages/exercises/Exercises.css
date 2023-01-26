@@ -7,6 +7,8 @@
 }
 .sort{
     margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
 }
 .btns{
     display: flex;
@@ -14,23 +16,23 @@
     flex-wrap: wrap;
 }
 
+
 .btns button{
     background-color:#1face1 ;
     padding: 10px;
     border: none;
     margin-top: 5px;
     color: #fff;
+    
 
 }
-.search{
-    margin: 20px;
-}
-.search input {
-    width: 40%;
-    height: 30px;
-}
-.search button{
-    height: 35px;
-    background-color:#232d36 ;
-    color: #fff;
+.bodypart{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    outline: 2px solid yellow;
+    left: 0;
+    
+    
 }
