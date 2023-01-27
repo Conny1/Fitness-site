@@ -20,15 +20,18 @@ const Exercises = () => {
   const data = useSelector((state)=>state.sort)
   const sortedata = useSelector((state)=>state.sort.sortedData )
   const Showdata =()=>{
-    setSortedExercise(sortedata)
+
+      setSortedExercise(sortedata)
+      setDisplaySorted(true)
+  
     
-    setDisplaySorted(true)
+   
   }
   useEffect(()=>{
     Showdata()
+    
     // eslint-disable-next-line
   }, [sortedata])
-
   
   
    
@@ -45,7 +48,7 @@ useEffect (()=>{
     <div className='exercises'  >
     <div className='sort' >
       <div className='btns' >
-        <div><button onClick={()=>{setDisplaySorted(false)}} >All</button></div>
+        <div><button onClick={()=>{setDisplaySorted(false)}} >Load All Exercise</button></div>
        <div > <button onClick={()=>{
         setShowbodyPart(!showbodyPart)
         setShowequip(false)

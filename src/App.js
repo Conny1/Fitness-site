@@ -53,7 +53,8 @@ const Fetchdata=async()=>{
 }
 useEffect(()=>{
  Fetchdata()
- // eslint-disable-next-line
+
+//  eslint-disable-next-line
 },[])
 
 
