@@ -7,7 +7,7 @@ import {
 import {Nav} from './componets';
 import { Exercise, Exercises, Home } from './pages';
 import { allExercie } from './redux/slice/exerciseSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import {getData} from './utils/FetchData';
 
@@ -53,6 +53,7 @@ const Fetchdata=async()=>{
 }
 useEffect(()=>{
  Fetchdata()
+ // eslint-disable-next-line
 },[])
 
 

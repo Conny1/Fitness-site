@@ -1,4 +1,12 @@
 .links{
+    height: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links button{
+    height: 40px;
+    padding: 5px;
     
 }
-*{outline: 1px solid red;}

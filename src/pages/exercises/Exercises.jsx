@@ -1,17 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import './Exercises.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { List, SortLinks } from '../../componets'
-import { allExercie } from '../../redux/slice/exerciseSlice'
-import { getData } from '../../utils/FetchData'
-import { setExercise, sortedEquipment, sorteBbodyParts } from '../../redux/slice/Sortslice'
-
-
-
-const url = 'https://exercisedb.p.rapidapi.com/exercises'
+import { setExercise, sortedEquipment, sorteBbodyParts, } from '../../redux/slice/Sortslice'
 
 const Exercises = () => {
+  const [displaySorted , setDisplaySorted] = useState(false)
   const [links, setLinks] = useState({})
+  const [sortedexercise, setSortedExercise ] = useState([])
   const [showbodyPart, setShowbodyPart] = useState(false)
   const [showequip, setShowequip] = useState(false)
   const exercises = useSelector((state=>state.exercise.exercise))
@@ -22,7 +18,18 @@ const Exercises = () => {
   }
   // sorted dynamic Links
   const data = useSelector((state)=>state.sort)
+  const sortedata = useSelector((state)=>state.sort.sortedData )
+  const Showdata =()=>{
+    setSortedExercise(sortedata)
+    
+    setDisplaySorted(true)
+  }
+  useEffect(()=>{
+    Showdata()
+    // eslint-disable-next-line
+  }, [sortedata])
 
+  
   
    
   
@@ -31,24 +38,14 @@ useEffect (()=>{
   dispatch(setExercise(exercises))
   Sorted()
   setLinks(data)
-
+  // eslint-disable-next-line
 },[exercises])
-  // sort
-  const sort = async (val)=>{
-    if (val === 'all' ){
-      await  getData(url)
-      .then((resp)=> dispatch(allExercie(resp.data)))
-    }else if( val === 'name' ){
-      await  getData(`${url}/name`)
-      .then((resp)=> dispatch(allExercie(resp.data)))
-    }
-  }
-  
+    
   return (
     <div className='exercises'  >
     <div className='sort' >
       <div className='btns' >
-        <div><button>All</button></div>
+        <div><button onClick={()=>{setDisplaySorted(false)}} >All</button></div>
        <div > <button onClick={()=>{
         setShowbodyPart(!showbodyPart)
         setShowequip(false)
@@ -56,19 +53,20 @@ useEffect (()=>{
        { showbodyPart && <div className='bodypart' >
         {
           links?.bodyPart?.map((item, index)=>{
-            return <SortLinks key={index} item={item} />
+            return <SortLinks key={index} item={item} showequip={showequip} showbodyPart={showbodyPart} Showdata={Showdata}  />
           })
         }
        </div>}
        </div>
         <div><button  onClick={()=>{
+          setShowequip(!showequip)
         setShowbodyPart(false)
-        setShowequip(!showequip)
+        
         }} >Equipment</button>
         { showequip && <div className='bodypart' >
         {
           links?.equipment?.map((item, index)=>{
-            return <SortLinks key={index} item={item} />
+            return <SortLinks key={index} item={item} showequip={showequip} showbodyPart={showbodyPart}  />
           })
         }
        </div>}
@@ -80,7 +78,7 @@ useEffect (()=>{
     </div>
     <div className='exercisesList' >
       {
-        exercises?.map((item)=>{
+      (displaySorted?sortedexercise:exercises)?.map((item)=>{
           return <List key={item.id} {...item} />
         })
       }

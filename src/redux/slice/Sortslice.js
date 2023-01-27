@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState={
+    sortedData:[],
     exercises:[],
     bodyPart:[],
     equipment:[]
@@ -33,11 +34,15 @@ const sortslice = createSlice({
                 }
                 
             }
+        },
+        sorteddataaction:(state, action)=>{
+            state.sortedData = action.payload
+
         }
 
     }
 })
 
 
-export const {sorteBbodyParts, sortedEquipment, setExercise } = sortslice.actions
+export const {sorteBbodyParts, sortedEquipment, setExercise, sorteddataaction } = sortslice.actions
 export default sortslice.reducer
