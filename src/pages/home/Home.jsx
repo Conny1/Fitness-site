@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import {BodyMass, Featured, Footer} from '../../componets'
-import gym from  '../../utils/img/gym.jfif'
+import gym from  '../../utils/img/gym.jpg'
 
 const Home = () => {
   return (

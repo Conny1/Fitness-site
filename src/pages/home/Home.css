@@ -2,10 +2,11 @@
     .header{
         width: 100%;
         position: relative;
+
     }
         img{
             width: 100%;
-        
+        object-fit: fill;
         }
         .headerInfo{
             position: absolute;
